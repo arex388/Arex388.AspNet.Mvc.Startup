@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Arex388.AspNet.Mvc.Startup</id>
+    <version>1.0.0</version>
+    <title>Arex388.AspNet.Mvc.Startup</title>
+    <authors>Arex388</authors>
+    <owners>Arex388</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/arex388/Arex388.AspNet.Mvc.Startup</projectUrl>
+    <description>ASP.NET MVC Classic dependency injection extensions to simulate ASP.NET Core's Startup configuration</description>
+    <copyright>Copyright 2020</copyright>
+    <tags>AspNet Mvc AspNetMvc DependencyInjection DI</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1" />
+    </dependencies>
+  </metadata>
+</package>
