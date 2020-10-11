@@ -1,9 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Arex388.AspNet.Mvc.Startup.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Web;
 
 namespace Arex388.AspNet.Mvc.Startup {
-	internal sealed class ServiceScopeModule :
+    internal sealed class ServiceScopeModule :
 		IHttpModule {
 		private static ServiceProvider _serviceProvider;
 

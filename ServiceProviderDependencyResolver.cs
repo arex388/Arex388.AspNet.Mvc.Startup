@@ -1,11 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Arex388.AspNet.Mvc.Startup.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Arex388.AspNet.Mvc.Startup {
-	internal sealed class ServiceProviderDependencyResolver :
+    internal sealed class ServiceProviderDependencyResolver :
 		IDependencyResolver {
 		public object GetService(
 			Type serviceType) {

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 
-namespace Arex388.AspNet.Mvc.Startup {
-	public static class ServiceProviderExtensions {
+namespace Arex388.AspNet.Mvc.Startup.Extensions {
+    public static class ServiceProviderExtensions {
 		public static IServiceCollection AddControllers(
 			this IServiceCollection services,
 			Assembly assembly) {
