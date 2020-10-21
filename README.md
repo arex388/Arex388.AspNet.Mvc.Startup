@@ -49,7 +49,7 @@ namespace YourNamespace {
 
 #### Things to Consider
 
-The only annoyance I've had so far is with HangFire's `IServiceCollection` extensions because they're in the `HangFire.AspNetCore` NuGet package and that force's a bunch of other NuGet packages to be added in. I can live with it for the simplicity in configuration and dependency registrations I get otherwise.
+The only annoyance I've had so far is with HangFire's `IServiceCollection` extensions because they're in the `HangFire.AspNetCore` NuGet package and that forces a bunch of other NuGet packages to be added in. I can live with it for the simplicity in configuration and dependency registrations I get otherwise.
 
 [0]: https://gist.github.com/davidfowl/563a602936426a18f67cd77088574e61
 [1]: https://scottdorman.blog/2016/03/17/integrating-asp-net-core-dependency-injection-in-mvc-4/
