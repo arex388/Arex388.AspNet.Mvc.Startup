@@ -5,7 +5,7 @@ using System;
 using System.Web;
 using System.Web.Mvc;
 
-[assembly: PreApplicationStartMethod(typeof(StartupApplication), "InitModule")]
+[assembly: PreApplicationStartMethod(typeof(StartupApplication), nameof(StartupApplication.InitModule))]
 namespace Arex388.AspNet.Mvc.Startup {
     public abstract class StartupApplication :
         HttpApplication {
