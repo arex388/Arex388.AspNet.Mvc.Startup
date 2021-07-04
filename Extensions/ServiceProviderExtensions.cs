@@ -5,10 +5,13 @@ using System.Reflection;
 using System.Web.Mvc;
 
 namespace Arex388.AspNet.Mvc.Startup.Extensions {
-    public static class ServiceProviderExtensions {
+	public static class ServiceProviderExtensions {
 		public static IServiceCollection AddControllers(
 			this IServiceCollection services,
 			Assembly assembly) {
+
+			ServiceProviderDependencyResolver.EnsureConfigured();
+
 			var type = typeof(IController);
 
 			var controllers = assembly.GetExportedTypes().Where(

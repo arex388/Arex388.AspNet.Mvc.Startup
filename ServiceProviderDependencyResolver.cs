@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Arex388.AspNet.Mvc.Startup {
-    internal sealed class ServiceProviderDependencyResolver :
+	internal sealed class ServiceProviderDependencyResolver :
 		IDependencyResolver {
 		public object GetService(
 			Type serviceType) {
@@ -29,5 +29,16 @@ namespace Arex388.AspNet.Mvc.Startup {
 
 			return scope.ServiceProvider.GetServices(serviceType);
 		}
+
+		internal static void EnsureConfigured() {
+			if (DependencyResolver.Current is ServiceProviderDependencyResolver) {
+				return;
+			}
+
+			var resolver = new ServiceProviderDependencyResolver();
+
+			DependencyResolver.SetResolver(resolver);
+		}
+
 	}
 }
