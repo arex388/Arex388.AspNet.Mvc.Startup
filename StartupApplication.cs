@@ -13,13 +13,24 @@ namespace Arex388.AspNet.Mvc.Startup {
 
         public static IServiceProvider ServiceProvider { get; private set; }
 
-        public void Configuration(
-            IAppBuilder app) => Configure(app);
+        public void Configuration(IAppBuilder app) {
+            BuildServiceProvider();
+            Configure(app);
+        }
 
         public abstract void Configure(
             IAppBuilder app);
 
+        [Obsolete("ServiceProvider is now configured before Configure().")]
         public void ConfigureServices() {
+            BuildServiceProvider();
+        }
+
+        protected virtual void BuildServiceProvider() {
+            if (ServiceProvider != null) {
+                return;
+            }
+
             var services = new ServiceCollection();
 
             ConfigureServices(services);
