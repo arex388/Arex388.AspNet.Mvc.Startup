@@ -1,0 +1,5 @@
+[*.cs]
+dotnet_sort_system_directives_first = false
+
+csharp_new_line_before_open_brace = none
+
