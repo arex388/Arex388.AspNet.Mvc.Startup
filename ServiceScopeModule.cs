@@ -1,14 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Web;
 
 namespace Arex388.AspNet.Mvc.Startup {
     internal sealed class ServiceScopeModule :
         IHttpModule {
-        private static ServiceProvider _serviceProvider;
-
-        public static void SetServiceProvider(
-            ServiceProvider serviceProvider) => _serviceProvider = serviceProvider;
 
         #region IHttpModule
         public void Dispose() {
@@ -26,7 +21,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             EventArgs e) {
             var context = sender.ToHttpContext();
 
-            context.Items[Constants.ServiceScopeType] = _serviceProvider.CreateScope();
+            StartupApplication.CreateScope(context);
         }
 
         private static void OnContextEndRequest(
@@ -34,9 +29,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             EventArgs e) {
             var context = sender.ToHttpContext();
 
-            if (context.Items[Constants.ServiceScopeType] is IServiceScope scope) {
-                scope.Dispose();
-            }
+            StartupApplication.DisposeScope(context);
         }
     }
 }
