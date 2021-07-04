@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Owin;
 using System;
 using System.Web;
-using System.Web.Mvc;
 
 [assembly: PreApplicationStartMethod(typeof(StartupApplication), nameof(StartupApplication.InitModule))]
 namespace Arex388.AspNet.Mvc.Startup {
@@ -38,10 +37,6 @@ namespace Arex388.AspNet.Mvc.Startup {
             var provider = services.BuildServiceProvider();
 
             ServiceProvider = provider;
-
-            var resolver = new ServiceProviderDependencyResolver();
-
-            DependencyResolver.SetResolver(resolver);
         }
 
         public abstract void ConfigureServices(
