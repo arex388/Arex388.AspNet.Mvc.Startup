@@ -8,11 +8,12 @@ using System.Web;
 namespace Arex388.AspNet.Mvc.Startup {
     public abstract class StartupApplication :
         HttpApplication {
-        public static void InitModule() => RegisterModule(Constants.ServiceScopeModuleType);
-
         public static IServiceProvider ServiceProvider { get; private set; }
 
-        public void Configuration(IAppBuilder app) {
+        public static void InitModule() => RegisterModule(Constants.ServiceScopeModuleType);
+
+        public void Configuration(
+            IAppBuilder app) {
             BuildServiceProvider();
             Configure(app);
         }
@@ -21,9 +22,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             IAppBuilder app);
 
         [Obsolete("ServiceProvider is now configured before Configure().")]
-        public void ConfigureServices() {
-            BuildServiceProvider();
-        }
+        public void ConfigureServices() => BuildServiceProvider();
 
         protected virtual void BuildServiceProvider() {
             if (ServiceProvider != null) {
@@ -42,13 +41,17 @@ namespace Arex388.AspNet.Mvc.Startup {
         public abstract void ConfigureServices(
             IServiceCollection services);
 
-        public static IServiceScope CreateScope(HttpContext context) {
+        public static IServiceScope CreateScope(
+            HttpContext context) {
             var scope = ServiceProvider.CreateScope();
+
             context.Items[Constants.ServiceScopeType] = scope;
+
             return scope;
         }
 
-        internal static void DisposeScope(HttpContext context) {
+        internal static void DisposeScope(
+            HttpContext context) {
             if (context.Items[Constants.ServiceScopeType] is IServiceScope scope) {
                 scope.Dispose();
             }

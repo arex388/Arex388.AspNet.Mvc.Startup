@@ -38,6 +38,5 @@ namespace Arex388.AspNet.Mvc.Startup {
 
             DependencyResolver.SetResolver(resolver);
         }
-
     }
 }

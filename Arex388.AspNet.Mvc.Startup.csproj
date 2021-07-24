@@ -11,7 +11,7 @@
 		<FileVersion>1.0.4.0</FileVersion>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugType>full</DebugType>

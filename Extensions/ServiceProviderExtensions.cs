@@ -9,7 +9,6 @@ namespace Arex388.AspNet.Mvc.Startup {
         public static IServiceCollection AddControllers(
             this IServiceCollection services,
             Assembly assembly) {
-
             ServiceProviderDependencyResolver.EnsureConfigured();
 
             var type = typeof(IController);
