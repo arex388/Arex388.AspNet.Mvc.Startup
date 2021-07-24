@@ -28,5 +28,16 @@ namespace Arex388.AspNet.Mvc.Startup {
 
             return scope.ServiceProvider.GetServices(serviceType);
         }
+
+        internal static void EnsureConfigured() {
+            if (DependencyResolver.Current is ServiceProviderDependencyResolver) {
+                return;
+            }
+
+            var resolver = new ServiceProviderDependencyResolver();
+
+            DependencyResolver.SetResolver(resolver);
+        }
+
     }
 }
