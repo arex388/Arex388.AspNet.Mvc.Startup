@@ -1,4 +1,4 @@
-﻿# Arex388.AspNet.Mvc.Startup
+﻿﻿# Arex388.AspNet.Mvc.Startup
 
 This is a classic ASP.NET MVC helper library that started out as a way for me to use the `Microsoft.Extensions.DependencyInjection` NuGet package for dependency injection. As I worked on it, it dawned on me that with a little bit more nudging it can simulate ASP.NET Core's `Startup.cs`.
 
@@ -27,9 +27,9 @@ Here's a more complete example:
 namespace YourNamespace {
     public class MvcApplication :
         StartupApplication {
-		public override Configure(
-			IAppBuilder app) {
-			//	Add IAppBuilder configurations
+        public override Configure(
+            IAppBuilder app) {
+            //	Add IAppBuilder configurations
         }
 
         public override void ConfigureServices(
