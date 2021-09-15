@@ -1,4 +1,4 @@
-﻿﻿﻿# Arex388.AspNet.Mvc.Startup
+﻿# Arex388.AspNet.Mvc.Startup
 
 This is a classic ASP.NET MVC helper library that started out as a way for me to use the `Microsoft.Extensions.DependencyInjection` NuGet package for dependency injection. As I worked on it, it dawned on me that with a little bit more nudging it can simulate ASP.NET Core's `Startup.cs`.
 
@@ -59,4 +59,3 @@ namespace YourNamespace {
 ## Things to Consider
 
 ~~The only annoyance I've had so far is with Hangfire's `IServiceCollection` extensions because they're in the `Hangfire.AspNetCore` NuGet package and that forces a bunch of other NuGet packages to be added in. I can live with it for the simplicity in configuration and dependency registrations I get otherwise.~~ Using `Hangfire.NetCore` package instead simplified this issue.
-
