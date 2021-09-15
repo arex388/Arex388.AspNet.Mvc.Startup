@@ -10,11 +10,14 @@ namespace Arex388.AspNet.Mvc.Startup {
         HttpApplication {
         public static IServiceProvider ServiceProvider { get; private set; }
 
-        public static void InitModule() => RegisterModule(Constants.ServiceScopeModuleType);
+        public static void InitModule() => RegisterModule(Statics.ServiceScopeModuleType);
 
         public void Configuration(
             IAppBuilder app) {
             BuildServiceProvider();
+
+            app.Properties.Add(nameof(ServiceProvider), ServiceProvider);
+
             Configure(app);
         }
 
@@ -33,9 +36,7 @@ namespace Arex388.AspNet.Mvc.Startup {
 
             ConfigureServices(services);
 
-            var provider = services.BuildServiceProvider();
-
-            ServiceProvider = provider;
+            ServiceProvider = services.BuildServiceProvider();
         }
 
         public abstract void ConfigureServices(
@@ -45,14 +46,14 @@ namespace Arex388.AspNet.Mvc.Startup {
             HttpContext context) {
             var scope = ServiceProvider.CreateScope();
 
-            context.Items[Constants.ServiceScopeType] = scope;
+            context.Items[Statics.ServiceScopeType] = scope;
 
             return scope;
         }
 
         internal static void DisposeScope(
             HttpContext context) {
-            if (context.Items[Constants.ServiceScopeType] is IServiceScope scope) {
+            if (context.Items[Statics.ServiceScopeType] is IServiceScope scope) {
                 scope.Dispose();
             }
         }

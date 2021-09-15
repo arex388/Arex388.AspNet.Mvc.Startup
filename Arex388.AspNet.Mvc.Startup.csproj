@@ -7,11 +7,11 @@
 		<Product>Arex388.AspNet.Mvc.Startup</Product>
 		<Description>ASP.NET MVC Classic dependency injection extensions to simulate ASP.NET Core's Startup configuration</Description>
 		<Copyright>Copyright © 2021</Copyright>
-		<AssemblyVersion>1.0.4.0</AssemblyVersion>
-		<FileVersion>1.0.4.0</FileVersion>
+		<AssemblyVersion>1.0.6.0</AssemblyVersion>
+		<FileVersion>1.0.6.0</FileVersion>
 		<OutputPath>bin\$(Configuration)\</OutputPath>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<Version>1.0.5</Version>
+		<Version>1.0.6</Version>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<DebugType>full</DebugType>
@@ -21,8 +21,8 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
 		<PackageReference Include="Microsoft.Owin" Version="4.2.0" />
 	</ItemGroup>
 	<ItemGroup>
