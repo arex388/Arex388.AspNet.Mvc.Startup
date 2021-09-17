@@ -16,7 +16,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             IAppBuilder app) {
             BuildServiceProvider();
 
-            app.Properties.Add(nameof(ServiceProvider), ServiceProvider);
+            app.Properties.Add(Statics.ServiceProviderKey, ServiceProvider);
 
             Configure(app);
         }
