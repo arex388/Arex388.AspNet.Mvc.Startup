@@ -12,7 +12,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             var scope = HttpContext.Current.GetServiceScope();
 
             if (scope is null) {
-                throw new InvalidOperationException("IServiceScope was not provided.");
+                throw new InvalidOperationException("IServiceScope was not provided. If this method is being called directly or indirectly from an async sequence of methods that use ConfigureAwait(false), then you're probably loosing the HttpContext.Current due to the thread switch.");
             }
 
             return scope.ServiceProvider.GetService(serviceType);
@@ -23,7 +23,7 @@ namespace Arex388.AspNet.Mvc.Startup {
             var scope = HttpContext.Current.GetServiceScope();
 
             if (scope is null) {
-                throw new InvalidOperationException("IServiceScope was not provided.");
+                throw new InvalidOperationException("IServiceScope was not provided. If this method is being called directly or indirectly from an async sequence of methods that use ConfigureAwait(false), then you're probably loosing the HttpContext.Current due to the thread switch.");
             }
 
             return scope.ServiceProvider.GetServices(serviceType);
