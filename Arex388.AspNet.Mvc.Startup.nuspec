@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>Arex388.AspNet.Mvc.Startup</id>
-		<version>1.0.7</version>
+		<version>1.0.8</version>
 		<authors>Arex388</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>ASP.NET MVC Classic dependency injection extensions to simulate ASP.NET Core's Startup configuration</description>
