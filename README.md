@@ -27,7 +27,7 @@ Here's a more complete example:
 namespace YourNamespace {
     public class MvcApplication :
         StartupApplication {
-        public override Configure(
+        public override void Configure(
             IAppBuilder app) {
             //	Add IAppBuilder configurations
         }
